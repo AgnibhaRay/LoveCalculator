@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -36,7 +37,13 @@ public class MainActivity extends AppCompatActivity {
         Random random=new Random(value);
 
         result=(random.nextInt(100)+1)+"%";
-        tv.setText(result);
+        if(m.equals("") || f.equals("")){
+
+            Toast.makeText(MainActivity.this,"Enter Names",Toast.LENGTH_LONG).show();
+        }
+        else {
+            tv.setText(result);
+        }
 
 
     }
